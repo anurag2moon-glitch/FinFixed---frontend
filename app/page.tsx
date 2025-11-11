@@ -167,7 +167,6 @@ export default function Page() {
           </div>
         )}
 
-        {/* Empty State */}
         {!loading && results.length === 0 && (
           <div className="text-center py-12 sm:py-20">
             <div className="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 rounded-full bg-emerald-500/10 flex items-center justify-center">
@@ -182,10 +181,16 @@ export default function Page() {
           </div>
         )}
 
-        {/* Results Grid - Fixed for comparison mode */}
-        <div className={`grid gap-4 sm:gap-6 ${
-          results.length === 2 ? 'grid-cols-1 lg:grid-cols-2' : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3'
-        }`}>
+        {/* Fixed Layout Section */}
+        <div
+          className={`grid gap-4 sm:gap-6 transition-all duration-300 ${
+            results.length === 1
+              ? 'grid-cols-1 max-w-3xl mx-auto'
+              : results.length === 2
+              ? 'grid-cols-1 lg:grid-cols-2'
+              : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3'
+          }`}
+        >
           {results.map((res, i) => {
             const info = res.metrics || {};
             const stock = res.stock;
@@ -309,9 +314,7 @@ export default function Page() {
                               fontSize: '12px'
                             }}
                           />
-                          <Legend 
-                            wrapperStyle={{ fontSize: '12px' }}
-                          />
+                          <Legend wrapperStyle={{ fontSize: '12px' }} />
                           <Line
                             type="monotone"
                             dataKey="value"
