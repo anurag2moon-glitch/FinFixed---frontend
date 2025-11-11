@@ -77,7 +77,7 @@ export default function Page() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
           <div className="text-center mb-4 sm:mb-6">
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-emerald-400 to-teal-300 bg-clip-text text-transparent mb-2">
-              FinFixed
+              FinMiner
             </h1>
             <p className="text-xs sm:text-sm text-emerald-300/70">Real-time Financial Analytics Dashboard</p>
           </div>
