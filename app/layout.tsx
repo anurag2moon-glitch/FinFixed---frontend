@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "FinFixed",
+  title: "FinMiner",
   description: "built by Anurag Tiwari",
 };
 
